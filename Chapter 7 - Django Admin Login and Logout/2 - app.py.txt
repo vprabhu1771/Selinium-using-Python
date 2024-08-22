@@ -1,0 +1,22 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+# Use webdriver.Firefox() for Firefox
+driver = webdriver.Firefox()
+
+# Replace with your Django admin URL
+driver.get('http://127.0.0.1:8000/admin/')
+
+username_input = driver.find_element(By.NAME,'username')
+password_input = driver.find_element(By.NAME,'password')
+
+username = "admin@gmail.com"
+password = "admin"
+
+username_input.send_keys(username)
+password_input.send_keys(password)
+
+password_input.send_keys(Keys.RETURN)
+
+#driver.close()
